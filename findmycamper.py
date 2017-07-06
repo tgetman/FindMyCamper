@@ -4,7 +4,8 @@ import cognitive_face as CF
 import http.client, urllib.request, urllib.parse, urllib.error, base64
 from azure.storage.file import FileService
 from azure.storage.file import ContentSettings
-
+from tkinter import Tk, Label, Button
+from tkinter.filedialog import askopenfilename
 
 
 file_service = FileService(account_name='cs28b777e132996x486dx860', account_key='+NXtMDMhWvZvxuHfr12oCZNIo/6WT7Y3gl0Mq91QRP2tUeIJ6bEL/acgFK+4f8LHX5s+AWRgejNvfwWtoH7Ivg==')
@@ -41,6 +42,7 @@ while len(urls) < numberofphotos:
 	urls.insert(0, input("enter photo urls "))
 	print (urls)
 	print((len(urls)))
+	
 
 
 if len(urls) == 1:
