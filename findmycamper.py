@@ -25,6 +25,7 @@ CF.Key.set(KEY)
 
 urls = []
 numberofphotos = int(raw_input("enter number of photos"))
+count = 0
 
 while len(urls) < numberofphotos:
 	urls.insert(0, raw_input("enter photo urls"))
@@ -33,10 +34,16 @@ while len(urls) < numberofphotos:
 
 
 
-
-#img_url1 = urls[0]
-#img_url2 = urls[1]
-
+img_url1 = urls[0]
+img_url2 = urls[1]
+img_url3 = urls[2]
+img_url4 = urls[3]
+img_url5 = urls[4]
+img_url6 = urls[5]
+img_url7 = urls[6]
+img_url8 = urls[7]
+img_url9 = urls[8]
+img_url10 = urls[9]
 #detect1 = CF.face.detect(img_url1)
 #print detect1
 #faceId1 = detect1[0]['faceId']
