@@ -1,6 +1,9 @@
 from tkinter import *
 
+
+
 root = Tk()
+root.title("FindMyCamper")
 
 var = StringVar()
 label = Label( root, textvariable = var )
@@ -19,6 +22,7 @@ B.place(x = 220, y = 50)
 
 
 
+
 campEntry = Entry(root, bd = 1)
 campEntry.place(x = 310, y = 200)
 
@@ -30,5 +34,14 @@ L1.place(x = 0, y = 250)
 E1 = Entry(root, bd = 1)
 E1.place(x = 310, y = 250)
 
+L2 = Label(root, text = "Password")
+L2.place(x = 0, y = 300)
+
+E2 = Entry(root, bd = 1)
+E2.place(x = 310, y = 300)
+
+
+detect = Button(root, text = "Detect")
+detect.place(x=220, y=400)
 
 root.mainloop()
