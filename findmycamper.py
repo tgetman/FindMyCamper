@@ -27,9 +27,7 @@ params = urllib.urlencode({
 KEY = 'fd330f9307be48f4bd4a59c5b57ab4cf'  # Replace with a valid subscription key (keeping the quotes in place).
 CF.Key.set(KEY)
 
-# You can use this example JPG or replace the URL below with your own URL to a JPEG image.
-#img_url1 = 'http://worldversus.com/img/george-clooney.jpg'
-#img_url2 = 'https://thumbs.dreamstime.com/z/two-women-hugging-smiling-15631732.jpg'
+
 file_service.get_file_to_path('myshare', None, 'myfile', 'out-IMG_2024.png')
 
 myChild = CF.face.detect('out-IMG_2024.png')
@@ -56,10 +54,13 @@ if len(urls) == 1:
 		
 		result1 = CF.face.verify(myChildFaceId, faceId1)
 		
-		results = (result1)
+	
 		
-		if results[0]['isIdentical'] == True:
-			print "match"
+		if result1['isIdentical'] == True:
+			print("match")
+		else:
+			print("no match")
+
 			
 	if len(detect1) == 2:
 		faceId1 = detect1[0]['faceId']
@@ -72,6 +73,8 @@ if len(urls) == 1:
 		
 		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True:
 			print "match"
+		else:
+			print "no match"
 			
 	if len(detect1) == 3:
 		faceId1 = detect1[0]['faceId']
@@ -86,6 +89,8 @@ if len(urls) == 1:
 		
 		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True:
 			print "match"
+		else:
+			print "no match"
 			
 	if len(detect1) == 4:
 		faceId1 = detect1[0]['faceId']
@@ -102,6 +107,8 @@ if len(urls) == 1:
 		
 		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True:
 			print "match"
+		else:
+			print "no match"
 			
 	if len(detect1) == 5:
 		faceId1 = detect1[0]['faceId']
@@ -120,6 +127,8 @@ if len(urls) == 1:
 		
 		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True:
 			print "match"
+		else:
+			print "no match"
 			
 	if len(detect1) == 6:
 			faceId1 = detect1[0]['faceId']
@@ -140,6 +149,8 @@ if len(urls) == 1:
 			
 			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True:
 				print "match"
+			else:
+				print "no match"
 	
 	if len(detect1) == 7:
 			faceId1 = detect1[0]['faceId']
@@ -162,6 +173,8 @@ if len(urls) == 1:
 			
 			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True or results[6]['isIdentical'] == True:
 				print "match"
+			else:
+				print "no match"
 
 	
 if len(urls) == 2:
@@ -171,11 +184,257 @@ if len(urls) == 2:
 	detect1 = CF.face.detect(img_url1)
 	detect2 = CF.face.detect(img_url2)
 		
-	faceId1 = detect1[0]['faceId']
-	faceId2 = detect2[0]['faceId']
+	if len(detect1) == 1:
+			faceId1 = detect1[0]['faceId']
+			
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			
+			results = (result1)
+			
+			if results[0]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+				
+	if len(detect1) == 2:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
 		
-	result1 = CF.face.verify(myChildFaceId, faceId1)
-	result2 = CF.face.verify(myChildFaceId, faceId2)
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+			
+		results = (result1,result2)
+			
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+				
+	if len(detect1) == 3:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		faceId3 = detect1[2]['faceId']
+			
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+			
+		results = (result1,result2,result3)
+			
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+				
+	if len(detect1) == 4:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		faceId3 = detect1[2]['faceId']
+		faceId4 = detect1[3]['faceId']
+			
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+			
+		results = (result1,result2,result3,result4)
+		
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+				
+	if len(detect1) == 5:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		faceId3 = detect1[2]['faceId']
+		faceId4 = detect1[3]['faceId']
+		faceId5 = detect1[4]['faceId']
+		
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+		result5 = CF.face.verify(myChildFaceId, faceId5)
+			
+		results = (result1,result2,result3,result4,result5)
+			
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+				
+	if len(detect1) == 6:
+			faceId1 = detect1[0]['faceId']
+			faceId2 = detect1[1]['faceId']
+			faceId3 = detect1[2]['faceId']
+			faceId4 = detect1[3]['faceId']
+			faceId5 = detect1[4]['faceId']
+			faceId6 = detect1[5]['faceId']
+				
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+				
+			results = (result1,result2,result3,result4,result5,result6)
+				
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+		
+	if len(detect1) == 7:
+			faceId1 = detect1[0]['faceId']
+			faceId2 = detect1[1]['faceId']
+			faceId3 = detect1[2]['faceId']
+			faceId4 = detect1[3]['faceId']
+			faceId5 = detect1[4]['faceId']
+			faceId6 = detect1[5]['faceId']
+			faceId7 = detect1[6]['faceId']
+				
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+			result7 = CF.face.verify(myChildFaceId, faceId7)
+				
+			results = (result1,result2,result3,result4,result5,result6,result7)
+				
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True or results[6]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+	if len(detect2) == 1:
+			faceId1 = detect2[0]['faceId']
+					
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+					
+			results = (result1)
+					
+			if results[0]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+						
+	if len(detect2) == 2:
+		faceId1 = detect2[0]['faceId']
+		faceId2 = detect2[1]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+					
+		results = (result1,result2)
+				
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect2) == 3:
+		faceId1 = detect2[0]['faceId']
+		faceId2 = detect2[1]['faceId']
+		faceId3 = detect2[2]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+					
+		results = (result1,result2,result3)
+				
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect2) == 4:
+		faceId1 = detect2[0]['faceId']
+		faceId2 = detect2[1]['faceId']
+		faceId3 = detect2[2]['faceId']
+		faceId4 = detect2[3]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+					
+		results = (result1,result2,result3,result4)
+					
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect2) == 5:
+		faceId1 = detect2[0]['faceId']
+		faceId2 = detect2[1]['faceId']
+		faceId3 = detect2[2]['faceId']
+		faceId4 = detect2[3]['faceId']
+		faceId5 = detect2[4]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+		result5 = CF.face.verify(myChildFaceId, faceId5)
+				
+		results = (result1,result2,result3,result4,result5)
+					
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect2) == 6:
+			faceId1 = detect2[0]['faceId']
+			faceId2 = detect2[1]['faceId']
+			faceId3 = detect2[2]['faceId']
+			faceId4 = detect2[3]['faceId']
+			faceId5 = detect2[4]['faceId']
+			faceId6 = detect2[5]['faceId']
+						
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+						
+			results = (result1,result2,result3,result4,result5,result6)
+						
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+				
+	if len(detect2) == 7:
+			faceId1 = detect2[0]['faceId']
+			faceId2 = detect2[1]['faceId']
+			faceId3 = detect2[2]['faceId']
+			faceId4 = detect2[3]['faceId']
+			faceId5 = detect2[4]['faceId']
+			faceId6 = detect2[5]['faceId']
+			faceId7 = detect2[6]['faceId']
+						
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+			result7 = CF.face.verify(myChildFaceId, faceId7)
+						
+			results = (result1,result2,result3,result4,result5,result6,result7)
+						
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True or results[6]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+
 	
 
 	
@@ -187,14 +446,387 @@ if len(urls) == 3:
 	detect1 = CF.face.detect(img_url1)
 	detect2 = CF.face.detect(img_url2)
 	detect3 = CF.face.detect(img_url3)
-			
-	faceId1 = detect1[0]['faceId']
-	faceId2 = detect2[0]['faceId']
-	faceId3 = detect3[0]['faceId']
-			
-	result1 = CF.face.verify(myChildFaceId, faceId1)
-	result2 = CF.face.verify(myChildFaceId, faceId2)
-	result3 = CF.face.verify(myChildFaceId, faceId3)
+	
+	
+	if len(detect1) == 1:
+			faceId1 = detect1[0]['faceId']
+					
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+					
+			results = (result1)
+					
+			if results[0]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+						
+	if len(detect1) == 2:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+					
+		results = (result1,result2)
+				
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect1) == 3:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		faceId3 = detect1[2]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+					
+		results = (result1,result2,result3)
+				
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect1) == 4:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		faceId3 = detect1[2]['faceId']
+		faceId4 = detect1[3]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+					
+		results = (result1,result2,result3,result4)
+					
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect1) == 5:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		faceId3 = detect1[2]['faceId']
+		faceId4 = detect1[3]['faceId']
+		faceId5 = detect1[4]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+		result5 = CF.face.verify(myChildFaceId, faceId5)
+				
+		results = (result1,result2,result3,result4,result5)
+					
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect1) == 6:
+			faceId1 = detect1[0]['faceId']
+			faceId2 = detect1[1]['faceId']
+			faceId3 = detect1[2]['faceId']
+			faceId4 = detect1[3]['faceId']
+			faceId5 = detect1[4]['faceId']
+			faceId6 = detect1[5]['faceId']
+						
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+						
+			results = (result1,result2,result3,result4,result5,result6)
+						
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+				
+	if len(detect1) == 7:
+			faceId1 = detect1[0]['faceId']
+			faceId2 = detect1[1]['faceId']
+			faceId3 = detect1[2]['faceId']
+			faceId4 = detect1[3]['faceId']
+			faceId5 = detect1[4]['faceId']
+			faceId6 = detect1[5]['faceId']
+			faceId7 = detect1[6]['faceId']
+						
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+			result7 = CF.face.verify(myChildFaceId, faceId7)
+						
+			results = (result1,result2,result3,result4,result5,result6,result7)
+						
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True or results[6]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+	if len(detect2) == 1:
+			faceId1 = detect2[0]['faceId']
+					
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+					
+			results = (result1)
+					
+			if results[0]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+						
+	if len(detect2) == 2:
+		faceId1 = detect2[0]['faceId']
+		faceId2 = detect2[1]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+					
+		results = (result1,result2)
+				
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect2) == 3:
+		faceId1 = detect2[0]['faceId']
+		faceId2 = detect2[1]['faceId']
+		faceId3 = detect2[2]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+					
+		results = (result1,result2,result3)
+				
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect2) == 4:
+		faceId1 = detect2[0]['faceId']
+		faceId2 = detect2[1]['faceId']
+		faceId3 = detect2[2]['faceId']
+		faceId4 = detect2[3]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+					
+		results = (result1,result2,result3,result4)
+					
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect2) == 5:
+		faceId1 = detect2[0]['faceId']
+		faceId2 = detect2[1]['faceId']
+		faceId3 = detect2[2]['faceId']
+		faceId4 = detect2[3]['faceId']
+		faceId5 = detect2[4]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+		result5 = CF.face.verify(myChildFaceId, faceId5)
+				
+		results = (result1,result2,result3,result4,result5)
+					
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect2) == 6:
+			faceId1 = detect2[0]['faceId']
+			faceId2 = detect2[1]['faceId']
+			faceId3 = detect2[2]['faceId']
+			faceId4 = detect2[3]['faceId']
+			faceId5 = detect2[4]['faceId']
+			faceId6 = detect2[5]['faceId']
+						
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+						
+			results = (result1,result2,result3,result4,result5,result6)
+						
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+				
+	if len(detect2) == 7:
+			faceId1 = detect2[0]['faceId']
+			faceId2 = detect2[1]['faceId']
+			faceId3 = detect2[2]['faceId']
+			faceId4 = detect2[3]['faceId']
+			faceId5 = detect2[4]['faceId']
+			faceId6 = detect2[5]['faceId']
+			faceId7 = detect2[6]['faceId']
+						
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+			result7 = CF.face.verify(myChildFaceId, faceId7)
+						
+			results = (result1,result2,result3,result4,result5,result6,result7)
+						
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True or results[6]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+				
+	
+	if len(detect3) == 1:
+			faceId1 = detect3[0]['faceId']
+					
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+					
+			results = (result1)
+					
+			if results[0]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+						
+	if len(detect3) == 2:
+		faceId1 = detect3[0]['faceId']
+		faceId2 = detect3[1]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+					
+		results = (result1,result2)
+				
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect3) == 3:
+		faceId1 = detect3[0]['faceId']
+		faceId2 = detect3[1]['faceId']
+		faceId3 = detect3[2]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+					
+		results = (result1,result2,result3)
+				
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect3) == 4:
+		faceId1 = detect3[0]['faceId']
+		faceId2 = detect3[1]['faceId']
+		faceId3 = detect3[2]['faceId']
+		faceId4 = detect3[3]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+					
+		results = (result1,result2,result3,result4)
+					
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect3) == 5:
+		faceId1 = detect3[0]['faceId']
+		faceId2 = detect3[1]['faceId']
+		faceId3 = detect3[2]['faceId']
+		faceId4 = detect3[3]['faceId']
+		faceId5 = detect3[4]['faceId']
+					
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+		result5 = CF.face.verify(myChildFaceId, faceId5)
+				
+		results = (result1,result2,result3,result4,result5)
+					
+		if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True:
+			print "match"
+		else:
+			print "no match"
+						
+	if len(detect3) == 6:
+			faceId1 = detect3[0]['faceId']
+			faceId2 = detect3[1]['faceId']
+			faceId3 = detect3[2]['faceId']
+			faceId4 = detect3[3]['faceId']
+			faceId5 = detect3[4]['faceId']
+			faceId6 = detect3[5]['faceId']
+						
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+						
+			results = (result1,result2,result3,result4,result5,result6)
+						
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+				
+	if len(detect3) == 7:
+			faceId1 = detect3[0]['faceId']
+			faceId2 = detect3[1]['faceId']
+			faceId3 = detect3[2]['faceId']
+			faceId4 = detect3[3]['faceId']
+			faceId5 = detect3[4]['faceId']
+			faceId6 = detect3[5]['faceId']
+			faceId7 = detect3[6]['faceId']
+						
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+			result7 = CF.face.verify(myChildFaceId, faceId7)
+						
+			results = (result1,result2,result3,result4,result5,result6,result7)
+						
+			if results[0]['isIdentical'] == True or results[1]['isIdentical'] == True or results[2]['isIdentical'] == True or results[3]['isIdentical'] == True or results[4]['isIdentical'] == True or results[5]['isIdentical'] == True or results[6]['isIdentical'] == True:
+				print "match"
+			else:
+				print "no match"
+
+	
 
 if len(urls) == 4:
 	img_url1 = urls[0]
@@ -268,28 +900,3 @@ if len(urls) == 10:
 	img_url9 = urls[8]
 	img_url10 = urls[9]
 	
-
-#print detect1
-#faceId1 = detect1[0]['faceId']
-#print faceId1
-
-#detect2 = CF.face.detect(img_url2)
-#print detect2
-#faceId2 = detect2[0]['faceId']
-#print faceId2
-#faceId3 = detect2[1]['faceId']
-#print faceId3
-
-#result1 = CF.face.verify(faceId1 , faceId2 )
-#result2 = CF.face.verify(faceId1, faceId3 )
-
-
-#print result1
-#print result2
-
-#if result1['isIdentical']== 'True':
-#	print "face 1 and 2"
-#if result2['isIdentical']== 'True':
-#	print "face 1 and 3"
-
-
