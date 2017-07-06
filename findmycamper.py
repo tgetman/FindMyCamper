@@ -5,15 +5,11 @@ import httplib, urllib, base64
 from azure.storage.file import FileService
 from azure.storage.file import ContentSettings
 
+
+
 file_service = FileService(account_name='cs28b777e132996x486dx860', account_key='+NXtMDMhWvZvxuHfr12oCZNIo/6WT7Y3gl0Mq91QRP2tUeIJ6bEL/acgFK+4f8LHX5s+AWRgejNvfwWtoH7Ivg==')
 file_service.create_share('myshare')
 
-file_service.create_file_from_path(
-	'myshare',
-	None, # We want to create this blob in the root directory, so we specify None for the directory_name
-	'myfile',
-	'/Users/thomasgetman/Desktop/IMG_2024.png',
-	content_settings=ContentSettings(content_type='image/png'))
 
 headers = {
 	# Request headers
@@ -52,11 +48,82 @@ while len(urls) < numberofphotos:
 if len(urls) == 1:
 	img_url1 = urls[0]
 	
+	
 	detect1 = CF.face.detect(img_url1)
 	
-	faceId1 = detect1[0]['faceId']
+	if len(detect1) == 1:
+		faceId1 = detect1[0]['faceId']
+		
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+	if len(detect1) == 2:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+	if len(detect1) == 3:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		faceId3 = detect1[2]['faceId']
+		
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+	if len(detect1) == 4:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		faceId3 = detect1[2]['faceId']
+		faceId4 = detect1[3]['faceId']
+		
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+	if len(detect1) == 5:
+		faceId1 = detect1[0]['faceId']
+		faceId2 = detect1[1]['faceId']
+		faceId3 = detect1[2]['faceId']
+		faceId4 = detect1[3]['faceId']
+		faceId5 = detect1[4]['faceId']
+		
+		result1 = CF.face.verify(myChildFaceId, faceId1)
+		result2 = CF.face.verify(myChildFaceId, faceId2)
+		result3 = CF.face.verify(myChildFaceId, faceId3)
+		result4 = CF.face.verify(myChildFaceId, faceId4)
+		result5 = CF.face.verify(myChildFaceId, faceId5)
+	if len(detect1) == 6:
+			faceId1 = detect1[0]['faceId']
+			faceId2 = detect1[1]['faceId']
+			faceId3 = detect1[2]['faceId']
+			faceId4 = detect1[3]['faceId']
+			faceId5 = detect1[4]['faceId']
+			faceId6 = detect1[5]['faceId']
+			
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+	if len(detect1) == 7:
+			faceId1 = detect1[0]['faceId']
+			faceId2 = detect1[1]['faceId']
+			faceId3 = detect1[2]['faceId']
+			faceId4 = detect1[3]['faceId']
+			faceId5 = detect1[4]['faceId']
+			faceId6 = detect1[5]['faceId']
+			faceId7 = detect1[6]['faceId']
+			
+			result1 = CF.face.verify(myChildFaceId, faceId1)
+			result2 = CF.face.verify(myChildFaceId, faceId2)
+			result3 = CF.face.verify(myChildFaceId, faceId3)
+			result4 = CF.face.verify(myChildFaceId, faceId4)
+			result5 = CF.face.verify(myChildFaceId, faceId5)
+			result6 = CF.face.verify(myChildFaceId, faceId6)
+			result7 = CF.face.verify(myChildFaceId, faceId7)
+			print(result1, result2, result3, result4, result5, result6, result7)
+
 	
-	result1 = CF.face.verify(myChildFaceId , faceId1 )
 if len(urls) == 2:
 	img_url1 = urls[0]
 	img_url2 = urls[1]
@@ -67,19 +134,48 @@ if len(urls) == 2:
 	faceId1 = detect1[0]['faceId']
 	faceId2 = detect2[0]['faceId']
 		
-	result1 = CF.face.verify(myChildFaceId , faceId1 )
+	result1 = CF.face.verify(myChildFaceId, faceId1)
 	result2 = CF.face.verify(myChildFaceId, faceId2)
+	
 
 	
 if len(urls) == 3:
 	img_url1 = urls[0]
 	img_url2 = urls[1]
 	img_url3 = urls[2]
+	
+	detect1 = CF.face.detect(img_url1)
+	detect2 = CF.face.detect(img_url2)
+	detect3 = CF.face.detect(img_url3)
+			
+	faceId1 = detect1[0]['faceId']
+	faceId2 = detect2[0]['faceId']
+	faceId3 = detect3[0]['faceId']
+			
+	result1 = CF.face.verify(myChildFaceId, faceId1)
+	result2 = CF.face.verify(myChildFaceId, faceId2)
+	result3 = CF.face.verify(myChildFaceId, faceId3)
+
 if len(urls) == 4:
 	img_url1 = urls[0]
 	img_url2 = urls[1]
 	img_url3 = urls[2]
 	img_url4 = urls[3]
+	
+	detect1 = CF.face.detect(img_url1)
+	detect2 = CF.face.detect(img_url2)
+	detect3 = CF.face.detect(img_url3)
+	detect4 = CF.face.detect(img_url4)
+			
+	faceId1 = detect1[0]['faceId']
+	faceId2 = detect2[0]['faceId']
+	faceId3 = detect3[0]['faceId']
+	faceId4 = detect4[0]['faceId']
+			
+	result1 = CF.face.verify(myChildFaceId, faceId1)
+	result2 = CF.face.verify(myChildFaceId, faceId2)
+	result3 = CF.face.verify(myChildFaceId, faceId3)
+	result4 = CF.face.verify(myChildFaceId, faceId4)
 if len(urls) == 5:
 	img_url1 = urls[0]
 	img_url2 = urls[1]
