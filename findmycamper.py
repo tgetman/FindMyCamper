@@ -1,5 +1,6 @@
 #!/usr/bin/python
 
+
 import cognitive_face as CF
 import http.client, urllib.request, urllib.parse, urllib.error, base64
 from azure.storage.file import FileService
@@ -29,9 +30,28 @@ KEY = 'fd330f9307be48f4bd4a59c5b57ab4cf'  # Replace with a valid subscription ke
 CF.Key.set(KEY)
 
 
-file_service.get_file_to_path('myshare', None, 'myfile', 'out-IMG_2024.png')
+pathtochild = str(input("Drag Photo of Your Child"))
+print(pathtochild)
 
-myChild = CF.face.detect('out-IMG_2024.png')
+numbertocut = pathtochild.rfind("/") + 1
+
+childphoto = pathtochild[numbertocut:]
+
+print(pathtochild[numbertocut:])
+
+
+file_service.create_file_from_path(
+	'myshare',
+	None, # We want to create this blob in the root directory, so we specify None for the directory_name
+	'myfile',
+	pathtochild,
+	content_settings=ContentSettings(content_type='image/png'))
+	
+file_service.get_file_to_path('myshare', None, 'myfile', 'out-'+childphoto)
+
+
+
+myChild = CF.face.detect('out-'+childphoto)
 myChildFaceId = myChild[0]['faceId']
 
 urls = []

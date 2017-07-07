@@ -1,4 +1,5 @@
 from tkinter import *
+from kivy.core.image import Image as CoreImage
 
 
 
